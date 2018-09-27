@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyleSheet, Image } from 'react-native'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 import Game from '../Component/Game'
 import About from '../Component/About'
@@ -41,16 +42,59 @@ const SearchStackNavigator = createStackNavigator({
 
 const TabNavigator = createBottomTabNavigator({
   Accueil: {
-    screen: SearchStackNavigator
+    screen: SearchStackNavigator,
+    navigationOptions: {
+      tabBarIcon: () => {
+        return <Image
+          source={require('../assets/accueilIcone.png')}
+          style={styles.icon}/>
+      }
+    }
   },
   Game: {
-    screen: Game
+    screen: Game,
+    navigationOptions: {
+      tabBarIcon: () => {
+        return <Image
+          source={require('../assets/gameIcone.png')}
+          style={styles.icon}/>
+      }
+    }
   },
   About: {
-    screen: About
+    screen: About,
+    navigationOptions: {
+      tabBarIcon: () => {
+        return <Image
+          source={require('../assets/crayonIcone.png')}
+          style={styles.icon}/>
+      }
+    }
   },
   Historique: {
-    screen: Historique
+    screen: Historique,
+    navigationOptions: {
+      tabBarIcon: () => {
+        return <Image
+          source={require('../assets/histoIcone.png')}
+          style={styles.icon}/>
+      }
+    }
+  },
+},
+{
+  tabBarOptions: {
+    activeBackgroundColor: '#DDDDDD', // Couleur d'arrière-plan de l'onglet sélectionné
+    inactiveBackgroundColor: '#FFFFFF', // Couleur d'arrière-plan des onglets non sélectionnés
+    showLabel: false, // On masque les titres
+    showIcon: true // On informe le TabNavigator qu'on souhaite afficher les icônes définis
+  }
+})
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 30,
+    height: 30
   }
 })
 

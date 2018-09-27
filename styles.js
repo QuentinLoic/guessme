@@ -11,7 +11,7 @@ class styles extends React.Component {
     styles = StyleSheet.create({
         main_container: {
             height: 190,
-            flexDirection: 'row'
+            flexDirection: 'row',
         },
         image: {
             width: 120,

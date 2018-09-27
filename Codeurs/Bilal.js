@@ -24,4 +24,6 @@ class Bilal extends React.Component {
         )
     }
 }
+
+
 export default Bilal
