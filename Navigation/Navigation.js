@@ -4,6 +4,10 @@ import Game from '../Component/Game'
 import About from '../Component/About'
 import Accueil from '../Component/Accueil'
 import Historique from '../Component/Historique'
+import Bilal from '../Codeurs/Bilal'
+import Gabriel from '../Codeurs/Gabriel'
+import Quentin from '../Codeurs/Quentin'
+import QuentinLoic from '../Codeurs/QuentinLoic'
 
 const SearchStackNavigator = createStackNavigator({
   Accueil: { 
@@ -20,7 +24,19 @@ const SearchStackNavigator = createStackNavigator({
   },
   Historique: {
     screen: Historique
-  }
+  },
+  Quentin: {
+    screen: Quentin
+  },
+  QuentinLoic: {
+    screen: QuentinLoic
+  },
+  Bilal: {
+    screen: Bilal
+  },
+  Gabriel: {
+    screen: Gabriel
+  },
 })
 
 const TabNavigator = createBottomTabNavigator({
