@@ -128,11 +128,4 @@ const styles = StyleSheet.create({
   }
 });
 
-
-const mapStateToProps = (state) => {
-  return {
-    histoScore: state.histoScore
-  }
-}
-
-export default connect(mapStateToProps)(Game)
+export default connect()(Game)
