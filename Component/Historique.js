@@ -2,7 +2,10 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 class Historique extends React.Component {
-    constructor(props){ super(props) }
+   
+    static navigationOptions = {
+        title: 'Historique',
+    };
 
     render() {
         return (

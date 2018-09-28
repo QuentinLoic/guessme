@@ -10,50 +10,54 @@ const TabNavigator = createBottomTabNavigator({
   Quentin: {
     screen: Quentin,
     navigationOptions: {
+      title:'Créateurs',
       tabBarIcon: () => {
         return <Image
           source={require('../assets/qIcone.png')}
-          style={styles.icon}/>
+          style={styles.icon} />
       }
     }
   },
   QuentinLoic: {
     screen: QuentinLoic,
     navigationOptions: {
+      title:'Créateurs',
       tabBarIcon: () => {
         return <Image
           source={require('../assets/pIcone.png')}
-          style={styles.icon}/>
+          style={styles.icon} />
       }
     }
   },
   Gabriel: {
     screen: Gabriel,
     navigationOptions: {
+      title:'Créateurs',
       tabBarIcon: () => {
         return <Image
           source={require('../assets/gIcone.png')}
-          style={styles.icon}/>
+          style={styles.icon} />
       }
     }
   },
   Bilal: {
     screen: Bilal,
     navigationOptions: {
+      title:'Créateurs',
       tabBarIcon: () => {
         return <Image
           source={require('../assets/bIcone.png')}
-          style={styles.icon}/>
-      }
+          style={styles.icon} />
+      } 
     }
   }
 },
   {
     tabBarOptions: {
-      activeBackgroundColor: '#DDDDDD', // Couleur d'arrière-plan de l'onglet sélectionné
-      inactiveBackgroundColor: '#FFFFFF', // Couleur d'arrière-plan des onglets non sélectionnés
-      showLabel: false, // On masque les titres
-      showIcon: true // On informe le TabNavigator qu'on souhaite afficher les icônes définis
+      activeBackgroundColor: '#DDDDDD',
+      inactiveBackgroundColor: '#FFFFFF',
+      showLabel: false,
+      showIcon: true
     }
   })
 

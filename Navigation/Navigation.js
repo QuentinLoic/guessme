@@ -1,48 +1,14 @@
 import React from 'react'
 import { StyleSheet, Image } from 'react-native'
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import { createBottomTabNavigator } from 'react-navigation'
 import Game from '../Component/Game'
-import About from '../Component/About'
+import Createur from '../Component/Createur'
 import Accueil from '../Component/Accueil'
 import Historique from '../Component/Historique'
-import Bilal from '../Codeurs/Bilal'
-import Gabriel from '../Codeurs/Gabriel'
-import Quentin from '../Codeurs/Quentin'
-import QuentinLoic from '../Codeurs/QuentinLoic'
-
-const SearchStackNavigator = createStackNavigator({
-  Accueil: { 
-    screen: Accueil,
-    navigationOptions: {
-      title: 'Accueil'
-    }
-  },
-  About: {
-    screen: About
-  },
-  Game: { 
-    screen: Game
-  },
-  Historique: {
-    screen: Historique
-  },
-  Quentin: {
-    screen: Quentin
-  },
-  QuentinLoic: {
-    screen: QuentinLoic
-  },
-  Bilal: {
-    screen: Bilal
-  },
-  Gabriel: {
-    screen: Gabriel
-  },
-})
 
 const TabNavigator = createBottomTabNavigator({
   Accueil: {
-    screen: SearchStackNavigator,
+    screen: Accueil,
     navigationOptions: {
       tabBarIcon: () => {
         return <Image
@@ -61,8 +27,8 @@ const TabNavigator = createBottomTabNavigator({
       }
     }
   },
-  About: {
-    screen: About,
+  Createur: {
+    screen: Createur,
     navigationOptions: {
       tabBarIcon: () => {
         return <Image
@@ -84,10 +50,10 @@ const TabNavigator = createBottomTabNavigator({
 },
 {
   tabBarOptions: {
-    activeBackgroundColor: '#DDDDDD', // Couleur d'arrière-plan de l'onglet sélectionné
-    inactiveBackgroundColor: '#FFFFFF', // Couleur d'arrière-plan des onglets non sélectionnés
-    showLabel: false, // On masque les titres
-    showIcon: true // On informe le TabNavigator qu'on souhaite afficher les icônes définis
+    activeBackgroundColor: '#DDDDDD',
+    inactiveBackgroundColor: '#FFFFFF',
+    showLabel: false,
+    showIcon: true
   }
 })
 

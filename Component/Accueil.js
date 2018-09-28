@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button, TouchableOpacity, StyleSheet, Text } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
 
 
 class Accueil extends React.Component {
@@ -8,8 +8,8 @@ class Accueil extends React.Component {
         this.props.navigation.navigate("Game")
     }
 
-    aboutScreen = () => {
-        this.props.navigation.navigate("About")
+    createurScreen = () => {
+        this.props.navigation.navigate("Createur")
     }
 
     histoScreen = () => {
@@ -20,14 +20,14 @@ class Accueil extends React.Component {
 
         return (
             <View style={styles.container}>
-                <TouchableOpacity style = {{borderColor:'black', marginTop:10, padding: 15, backgroundColor:'#b8c6dd', shadowOpacity:1, width:200, borderRadius:10}} onPress={() => this.gameScreen()}>
-                    <Button title='Game' onPress={() => this.gameScreen()}></Button>
+                <TouchableOpacity style={styles.toucheable} onPress={() => this.gameScreen()}>
+                    <Text style={ styles.text }>Game</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {{borderColor:'black', marginTop:10, padding: 15, backgroundColor:'#b8c6dd', shadowOpacity:1, width:200, borderRadius:10}} onPress={() => this.histoScreen()}>
-                    <Button title='Historique' onPress={() => this.histoScreen()}></Button>
+                <TouchableOpacity style={styles.toucheable} onPress={() => this.histoScreen()}>
+                    <Text style={ styles.text }>Historique</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {{borderColor:'black', marginTop:10, padding: 15, backgroundColor:'#b8c6dd', width:200, shadowOpacity:1, borderRadius:10}} onPress={() => this.aboutScreen()}>
-                    <Button title='Les Créateurs' onPress={() => this.aboutScreen()}></Button>
+                <TouchableOpacity style={styles.toucheable} onPress={() => this.createurScreen()}>
+                    <Text style={ styles.text }>Les Créateurs</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -36,10 +36,26 @@ class Accueil extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    toucheable: {
+        marginTop: 50,
+        borderColor: 'black',
+        width: 200,
+        backgroundColor: '#323840',
+        shadowOpacity: 1,
+        borderRadius: 10,
+        elevation: 10
+    },
+    text: {
+        fontStyle: ('100', 'italic'),
+        textAlign: 'center',
+        color: '#EEEEEE',
+        padding: 25
     }
-   });
+});
+
 export default Accueil
