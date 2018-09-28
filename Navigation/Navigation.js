@@ -27,16 +27,6 @@ const TabNavigator = createBottomTabNavigator({
       }
     }
   },
-  Createur: {
-    screen: Createur,
-    navigationOptions: {
-      tabBarIcon: () => {
-        return <Image
-          source={require('../assets/crayonIcone.png')}
-          style={styles.icon}/>
-      }
-    }
-  },
   Historique: {
     screen: Historique,
     navigationOptions: {
@@ -47,6 +37,16 @@ const TabNavigator = createBottomTabNavigator({
       }
     }
   },
+  Createur: {
+    screen: Createur,
+    navigationOptions: {
+      tabBarIcon: () => {
+        return <Image
+          source={require('../assets/crayonIcone.png')}
+          style={styles.icon}/>
+      }
+    }
+  }
 },
 {
   tabBarOptions: {
