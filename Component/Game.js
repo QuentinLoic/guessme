@@ -6,7 +6,6 @@ class Game extends React.Component {
 
   constructor(props) {
     super(props);
-    this.timerOn = false
     this.timer
     this.state = {
       random: this.GenerateRandomNumber(),
@@ -16,6 +15,10 @@ class Game extends React.Component {
       bestscore: "?",
       nbessai: 0
     }
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.histoScore)
   }
 
   GenerateRandomNumber() {
@@ -29,17 +32,12 @@ class Game extends React.Component {
     this.setState({ number });
   }
 
-  incrementCount() {
-    this.setState(prevState => ({ chrono: prevState.chrono + 1 }))
-  }
-
   checkResult() {
     let count = this.state.nbessai
     this.setState({ nbessai: count + 1 })
-    if (this.timerOn == false && this.state.number !== this.state.random) {
-      this.timerOn = true
+    if (this.timer == undefined || this.timer == null) {
       this.timer = setInterval(() => {
-        this.incrementCount()
+        this.setState({chrono:this.state.chrono+=1})
       }, 1000)
     }
     if (this.state.number < this.state.random) {
@@ -52,15 +50,19 @@ class Game extends React.Component {
     }
     else {
       this.setState({ text: 'Bravo' })
-      this.setState({ timerOn: false })
+      clearInterval(this.timer)
+      this.addtohistorique()
+      this.timer = undefined
       if (this.state.nbessai < this.state.bestscore || this.state.bestscore == "?") {
-        this.setState({ bestscore: nbessai})
+        this.setState({ bestscore: count + 1})
         console.log('BestScore: ' + this.state.bestscore)
       }
     }
   }
 
   refreshall() {
+    clearInterval(this.timer)
+    this.timer = undefined
     this.setState({ text: "", random: this.GenerateRandomNumber(), nbessai: 0, number: "", chrono: 0, timerOn: false })
   }
 
