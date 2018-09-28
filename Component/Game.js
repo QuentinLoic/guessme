@@ -76,17 +76,15 @@ class Game extends React.Component {
     //console.log(this.props)
     return (
       <View style={styles.container}>
-        <Text style={{ color: 'blue', paddingTop: 10 }}>Chrono : {this.state.chrono}</Text>
-        <Text style={{ color: 'blue', paddingTop: 10 }}>BestScore : {this.state.bestscore}</Text>
-        <Text style={{ color: 'blue', paddingTop: 10 }}>Coups : {this.state.nbessai}</Text>
-        <TextInput style={{ width: 68, height: 60, borderColor: 'red', borderWidth: 2, borderRadius: 15, padding: 15, marginTop: 10 }}
-          onSubmit={() => this.checkResult()}
-          onChangeText={(number) => this.click(number)} keyboardType='numeric' value={this.state.number}></TextInput>
+        <Text style={styles.textsolo}>Chrono : {this.state.chrono}</Text>
+        <Text style={styles.textsolo}>BestScore : {this.state.bestscore}</Text>
+        <Text style={styles.textsolo}>Coups : {this.state.nbessai}</Text>
+        <TextInput style={styles.textinput} onSubmit={() => this.checkResult()} onChangeText={(number) => this.click(number)} keyboardType='numeric' value={this.state.number}></TextInput>
         <TouchableOpacity style={ styles.toucheable } onPress={() => this.checkResult()} >
-          <Text style={{ fontStyle: ('100', 'italic'), textAlign: 'center', color: '#EEEEEE', padding: 10 }}>Press Me</Text>
+          <Text style={styles.text}>Press Me</Text>
         </TouchableOpacity>
         <TouchableOpacity style={ styles.toucheable } onPress={() => this.refreshall()}>
-          <Text style={{ fontStyle: ('100', 'italic'), textAlign: 'center', color: '#EEEEEE', padding: 10 }}>Refresh</Text>
+          <Text style={styles.text}>Refresh</Text>
         </TouchableOpacity>
         <Text>{this.state.text}</Text>
       </View>
@@ -109,6 +107,32 @@ const styles = StyleSheet.create({
     shadowOpacity: 1, 
     borderRadius: 10, 
     elevation: 10
+  },
+  text: {
+    fontStyle: ('normal', 'italic'), 
+    textAlign: 'center',
+    color: '#EEEEEE', 
+    padding: 10
+  },
+  textsolo: {
+    marginTop: 20, 
+    fontStyle: ('normal', 'italic'), 
+    textAlign: 'center',
+    color: '#EEEEEE', 
+    padding: 15,
+    width: 200,
+    borderRadius: 10,
+    backgroundColor: '#3C434C',
+    elevation: 10
+  },
+  textinput: {
+    width: 200, 
+    height: 50, 
+    borderColor: '#8191A6', 
+    borderWidth: 2, 
+    borderRadius: 10, 
+    padding: 15, 
+    marginTop: 40
   }
 });
 

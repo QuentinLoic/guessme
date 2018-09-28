@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         elevation: 10
     },
     text: {
-        fontStyle: ('100', 'italic'),
+        fontStyle: ('normal', 'italic'),
         textAlign: 'center',
         color: '#EEEEEE',
         padding: 25
