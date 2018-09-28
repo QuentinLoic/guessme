@@ -16,11 +16,7 @@ class Game extends React.Component {
       nbessai: 0
     }
   }
-
-  componentDidUpdate() {
-    console.log(this.props.histoScore)
-  }
-
+  
   GenerateRandomNumber() {
     let random = Math.floor(Math.random() * 100) + 1;
     console.log(random)
@@ -28,7 +24,6 @@ class Game extends React.Component {
   }
 
   click(number) {
-    console.log({ number });
     this.setState({ number });
   }
 
@@ -55,7 +50,6 @@ class Game extends React.Component {
       this.timer = undefined
       if (this.state.nbessai < this.state.bestscore || this.state.bestscore == "?") {
         this.setState({ bestscore: count + 1})
-        console.log('BestScore: ' + this.state.bestscore)
       }
     }
   }
