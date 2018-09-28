@@ -1,4 +1,4 @@
 import { createStore } from 'redux';
-import historique from './Reducers/favoriteReducer'
+import ScoreReducer from './Reducers/ScoreReducer'
 
-export default createStore(historique)
+export default createStore(ScoreReducer)

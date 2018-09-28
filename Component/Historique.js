@@ -1,16 +1,17 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 
 class Historique extends React.Component {
-   
-    static navigationOptions = {
-        title: 'Historique',
-    };
+
+    constructor(props){
+        super(props)
+    }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>{this.props.Historique}</Text>
+                <Text>Score des 5 dernière partie</Text>
+                <FlatList data={[{key: 'a'}, {key: 'b'}]} renderItem={({item}) => <Text>{item.key}</Text>}/>
             </View>
         )
     }
